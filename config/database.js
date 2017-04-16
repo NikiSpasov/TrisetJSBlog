@@ -11,10 +11,11 @@ module.exports = (config) => {
             return;
         }
 
-        console.log('MongoDB ready!')
+        console.log('MongoDB ready for action!')
     });
 
     require('./../models/User');
+    require('./../models/Article');
 };
 
 
