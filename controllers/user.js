@@ -1,5 +1,8 @@
 const User = require('mongoose').model('User');
+const Role = require('mongoose').model('Role');
 const encryption = require('./../utilities/encryption');
+
+
 
 module.exports = {
     registerGet: (req, res) => {
@@ -31,6 +34,31 @@ module.exports = {
                     salt: salt
                 };
 
+                let roles = [];
+                Role.findOne({name: 'User'}).then(role => {
+                    role.push(role.id);
+
+                    userObject.roles = roles;
+                    User.create(userObject).then(user => {
+                        role.users.push(user.id);
+                        role.save(err => {
+                            if(err){
+                                registerArgs.error = err.message;
+                                res.render('user/register', registerArgs);
+                            }
+                            else {
+                                req.logIn(user, (err) => {
+                                    if (err) {
+                                        registerArgs.error = err.message;
+                                        res.render('user/register', registerArgs);
+                                        return;
+                                    }
+                                    res.redirect('/');
+                                })
+                            }
+                        })
+                    })
+                });
                 User.create(userObject).then(user => {
                     req.logIn(user, (err) => {
                         if (err) {
