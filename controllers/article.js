@@ -44,5 +44,36 @@ module.exports = {
         Article.findById(id).populate('author').then(article => {
             res.render('article/details', article)
         });
+    },
+
+    editGet: (req, res) => {
+        let id = req.params.id;
+
+        Article.findById(id).then(article => {
+            res.render('article/edit', article)
+        });
+    },
+    editPost: (req, res) => {
+        let id = req.params.id;
+        let articleArgs = req.body;
+
+        let errorMsg = '';
+        if(!articleArgs.title){
+            errorMsg = 'Title is required, pal!';
+        }
+        else if (!articleArgs.content) {
+            errorMsg = 'Write something!'
+        }
+
+        if (errorMsg) {
+            res.render('article/edit', {error: errorMsg})
+        }
+        else {
+            Article.update({_id: id}, {$set: {title: articleArgs.title, content: articleArgs.content}})
+                .then(updateStatus => {
+                    res.redirect(`/article/details/${id}`);
+                })
+        }
+
     }
 };
