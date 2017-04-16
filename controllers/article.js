@@ -49,8 +49,21 @@ module.exports = {
     editGet: (req, res) => {
         let id = req.params.id;
 
+        if(!req.isAuthenticated()){
+            let returnUrl = `/article/edit/${id}`;
+            req.session.returnUrl = returnUrl;
+            res.redirect('/user/login');
+            return;
+        }
+
         Article.findById(id).then(article => {
-            res.render('article/edit', article)
+           req.user.isInRole('Admin').then(isAdmin => {
+               if (!isAdmin && !req.user.isAuthor(article)){
+                   res.redirect('/user/login');
+                   return;
+               }
+               res.render('article/edit', article)
+           });
         });
     },
     editPost: (req, res) => {
@@ -79,8 +92,21 @@ module.exports = {
     deleteGet: (req, res) => {
         let id = req.params.id;
 
+        if(!req.isAuthenticated()){
+            let returnUrl = `/article/delete/${id}`;
+            req.session.returnUrl = returnUrl;
+            res.redirect('/user/login');
+            return;
+        }
+
         Article.findById(id).then(article => {
-            res.render('article/delete', article)
+            req.user.isInRole('Admin').then(isAdmin => {
+                if (!isAdmin && !req.user.isAuthor(article)){
+                    res.redirect('/user/login');
+                    return;
+                }
+                res.render('article/delete', article)
+            })
         });
     },
     deletePost: (req, res) => {
