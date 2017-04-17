@@ -16,6 +16,7 @@
 body {
     padding-top: 70px;
     padding-bottom: 20px;
+    //*background-image: image('http://www.whatsonningbo.com/ent_images/54da2e32173a38bd_4.jpg');*/
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -46,6 +47,7 @@ html {
 }
 body {
   margin: 0;
+    background: #95ff50;
 }
 article,
 aside,
