@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e7f038a-d865-4518-b115-565d55cdce2a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.js" afterPath="$PROJECT_DIR$/config/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/home.js" afterPath="$PROJECT_DIR$/controllers/home.js" />
-    </list>
+    <list default="true" id="2e7f038a-d865-4518-b115-565d55cdce2a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -27,7 +23,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
               <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-              <folding />
+              <folding>
+                <marker date="1493314200000" expanded="true" signature="3757:4007" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -402,12 +400,12 @@
       <updated>1492330103507</updated>
       <workItem from="1492330105131" duration="23816000" />
       <workItem from="1492852474023" duration="4010000" />
-      <workItem from="1493325378821" duration="889000" />
+      <workItem from="1493325378821" duration="1622000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28715000" />
+    <option name="totallyTimeSpent" value="29448000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="188" y="23" width="1062" height="877" extended-state="0" />
@@ -447,7 +445,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-          <folding />
+          <folding>
+            <marker date="1493314200000" expanded="true" signature="3757:4007" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -695,7 +695,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-          <folding />
+          <folding>
+            <marker date="1493314200000" expanded="true" signature="3757:4007" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
