@@ -1,0 +1,10 @@
+<div>
+    <h4>User details</h4>
+    Email: {{user.email}}<br>
+    Full name: {{user.fullName}}<br>
+    Articles count: {{user.articles.length}}<br>
+    Article titles:
+    {{#each user.articles}}
+        <br>{{this.title}}
+    {{/each}}
+</div>
