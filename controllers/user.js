@@ -108,5 +108,12 @@ module.exports = {
     logout: (req, res) => {
         req.logOut();
         res.redirect('/');
+    },
+
+    detailsGet: (req, res) => {
+        let id = req.params.id;
+        User.findById(id).populate('articles').then(user => {
+            res.render('user/details', {user});
+        });
     }
 };
